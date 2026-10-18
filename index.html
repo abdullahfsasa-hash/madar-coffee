@@ -1584,7 +1584,15 @@ function vHome() {
     const c = CATS[k];
     return `<a class="tile ${c.mult ? 'tile--mult' : ''}" href="#shop-${k}" data-nav><img src="${IMG(c.tile)}" alt="" loading="lazy" decoding="async" style="object-position:${c.pos}"><span class="tile__t"><b>${c.label}</b><span class="tile__go">${ico('arrowL', 14)}</span></span></a>`;
   }).join('');
-  return `${heroHome()}
+  const offersTop = `<section class="sec offtop" style="padding-block:26px 22px"><div class="wrap">
+    <div class="sec-head"><h2 class="sec-title">عروض الانطلاق</h2><a class="sec-link" href="#shop" data-nav><span>كل العروض</span><span class="circ">${ico('arrowL', 14)}</span></a></div>
+    <div class="offers">${OFFERS.map((o, i) => `<a class="offer" href="#p-${o.id}" data-nav><img src="${IMG(o.img)}" alt="${esc(o.alt)}" width="1000" height="1000" loading="eager"${i === 0 ? ' fetchpriority="high"' : ''} decoding="async"></a>`).join('')}</div>
+    <div class="coupon" style="margin-top:20px">
+      <div><h3>خصم الإطلاق ${CONFIG.pct}% على طلبك</h3><p>أضف الكود في السلة قبل إتمام الطلب. التوصيل مجاني للطلبات فوق ${CONFIG.freeFrom} ريال.</p></div>
+      <div class="coupon__code"><b dir="ltr">${CONFIG.code}</b><button type="button" data-act="copy-code">${ico('copy', 16)} نسخ الكود</button></div>
+    </div>
+  </div></section>`;
+  return `${offersTop}${heroHome()}
   <section class="sec sec--tight"><div class="wrap">
     <div class="tiles-head"><h2>اكتشف قهوتك القادمة</h2><p>محاصيل متنوعة، أدوات تحضير، وأكواب تكمل طقوس قهوتك.</p></div>
     <div class="tiles">${tiles}</div>
@@ -1593,16 +1601,6 @@ function vHome() {
   <section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="sec-head"><h2 class="sec-title">اختيارات مدار</h2><a class="sec-link" href="#shop" data-nav><span>عرض جميع المنتجات</span><span class="circ">${ico('arrowL', 14)}</span></a></div>
     <div class="grid">${FEATURED.map(id => card(byId(id))).join('')}</div>
-  </div></section>
-  <section class="sec" style="padding-top:20px"><div class="wrap">
-    <div class="sec-head"><h2 class="sec-title">عروض الانطلاق</h2><a class="sec-link" href="#shop" data-nav><span>كل العروض</span><span class="circ">${ico('arrowL', 14)}</span></a></div>
-    <div class="offers">${OFFERS.map(o => `<a class="offer" href="#p-${o.id}" data-nav><img src="${IMG(o.img)}" alt="${esc(o.alt)}" width="1000" height="1000" loading="lazy" decoding="async"></a>`).join('')}</div>
-  </div></section>
-  <section class="sec" style="padding-top:10px"><div class="wrap">
-    <div class="coupon">
-      <div><h3>خصم الإطلاق ${CONFIG.pct}% على طلبك</h3><p>أضف الكود في السلة قبل إتمام الطلب. التوصيل مجاني للطلبات فوق ${CONFIG.freeFrom} ريال.</p></div>
-      <div class="coupon__code"><b dir="ltr">${CONFIG.code}</b><button type="button" data-act="copy-code">${ico('copy', 16)} نسخ الكود</button></div>
-    </div>
   </div></section>
   <section class="sec sec--tight"><div class="wrap"><div class="values">
     <div class="val"><span class="vi">${ico('bean', 22)}</span><div><b>محاصيل مختارة بعناية</b><span>بن مختص من محامص سعودية وأصول متنوعة.</span></div></div>
