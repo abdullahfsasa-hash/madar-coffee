@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>لوحة طلبات مدار</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#EFE7DA;--card:#F8F3EA;--ink:#1D3A30;--ink2:#4a5d55;--line:#d9ccb8;--green:#1E3B31;--gold:#A57F4A;--ok:#1F7A4D;--bad:#9A3B2B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.6 'IBM Plex Sans Arabic',system-ui,sans-serif}
+header{background:var(--green);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+header h1{margin:0;font-size:18px;font-weight:600;flex:1}
+button,select,input{font:inherit}
+.btn{border:0;border-radius:999px;padding:9px 16px;background:var(--gold);color:#fff;cursor:pointer;font-weight:500}
+.btn--ghost{background:transparent;border:1px solid rgba(255,255,255,.45)}
+.btn:disabled{opacity:.6;cursor:default}
+main{max-width:860px;margin:0 auto;padding:16px}
+.login{max-width:380px;margin:60px auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:12px}
+.login input{padding:12px;border-radius:12px;border:1px solid var(--line);background:#fff;direction:ltr}
+.err{color:var(--bad);min-height:1.4em;font-size:14px}
+.tabs{display:flex;gap:8px;margin:0 0 14px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+.tab[aria-pressed=true]{background:var(--green);color:#fff;border-color:var(--green)}
+.o{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
+.o__top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.o__ref{font-weight:600;direction:ltr;letter-spacing:.04em}
+.o__t{color:var(--ink2);font-size:13px;flex:1}
+.pill{border-radius:999px;padding:2px 10px;font-size:12.5px;font-weight:500;border:1px solid}
+.pill--ok{color:var(--ok);border-color:var(--ok)}
+.pill--bad{color:var(--bad);border-color:var(--bad)}
+.o select{padding:5px 10px;border-radius:10px;border:1px solid var(--line);background:#fff}
+.o dl{margin:8px 0;display:grid;grid-template-columns:auto 1fr;gap:2px 12px}
+.o dt{color:var(--ink2)} .o dd{margin:0;word-break:break-word}
+.o ul{margin:8px 0;padding:0 18px}
+.sum{display:flex;gap:16px;flex-wrap:wrap;font-weight:500;border-top:1px dashed var(--line);padding-top:8px;margin-top:8px}
+.o a{color:var(--green);font-weight:500}
+.empty{text-align:center;color:var(--ink2);padding:40px 0}
+.info{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:14px}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="admin.js"></script>
+</body>
+</html>
