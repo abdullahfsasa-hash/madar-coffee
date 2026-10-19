@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mirwaf.pages.dev/sitemap.xml
